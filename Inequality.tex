@@ -1,0 +1,847 @@
+\documentclass[12pt]{article}
+\pdfminorversion=5 
+\pdfcompresslevel=9
+\pdfobjcompresslevel=2
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage[table]{xcolor}
+\usepackage{subfigure}
+\usepackage{bigints}
+\usepackage{bbm}
+\usepackage{xr}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+\definecolor{redd}{rgb}{0.8, 0.1, 0.1}
+\definecolor{navyblue}{rgb}{0.2, 0.8, 0.1}
+\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
+\definecolor{brickred}{rgb}{0.8, 0.25, 0.33}
+\definecolor{cornellred}{rgb}{0.7, 0.11, 0.11}
+\usepackage[colorlinks,linkcolor=navyblue,urlcolor=brickred,citecolor=navyblue]{hyperref}
+\newcommand{\navy}[1]{\textcolor{blue}{\bf #1}}
+\newcommand{\navymth}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\usepackage{subfigure}
+\usepackage[authoryear,round]{natbib}
+\usepackage{sectsty}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage[]{morefloats}
+\usepackage{booktabs}
+\usepackage{float}
+%\usepackage[runin]{abstract}
+%\abslabeldelim{\;}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{threeparttable}
+%\usepackage{mathptmx}
+%\usepackage{newtxmath}
+%\usepackage{times}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{rotating}
+\UseRawInputEncoding
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage[newcommands]{ragged2e}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{setspace} 
+\doublespacing
+\usepackage{mathpazo}
+\usepackage{etoolbox}
+
+\setcounter{MaxMatrixCols}{12}
+
+
+
+
+
+\geometry{left=1.0in,right=1.0in,top=1.0in,bottom=1.0in}
+
+\parskip5pt
+\parindent15pt
+\renewcommand{\baselinestretch}{1.1}
+
+\newcommand*{\theorembreak}{\usebeamertemplate{theorem end}\framebreak\usebeamertemplate{theorem begin}}
+
+\newcommand{\newtopic}[1]{\textcolor{Green}{\Large \bf #1}}
+
+
+\definecolor{pale}{RGB}{235, 235, 235}
+\definecolor{pale2}{RGB}{175,238,238}
+\definecolor{turquois4}{RGB}{0,134,139}
+
+% Typesetting code
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+%\usepackage{minted}
+%\usemintedstyle{friendly}
+
+
+
+\usepackage{stmaryrd}
+
+\newcommand{\Fact}{\textcolor{Brown}{\bf Fact. }}
+\newcommand{\Facts}{\textcolor{Brown}{\bf Facts }}
+\newcommand{\keya}{\textcolor{turquois4}{\bf Key Idea. }}
+\newcommand{\Factnodot}{\textcolor{Brown}{\bf Fact }}
+\newcommand{\Eg}{\textcolor{ForestGreen}{Example. }}
+\newcommand{\Egs}{\textcolor{ForestGreen}{Examples. }}
+\newcommand{\Ex}{{\bf Ex. }}
+\newcommand{\Thm}{\textcolor{Brown}{\bf Theorem. }}
+\newcommand{\Prf}{\textcolor{turquois4}{\bf Proof.}}
+\newcommand{\Ass}{\textcolor{turquois4}{\bf Assumption.}} 
+\newcommand{\Lem}{\textcolor{Brown}{\bf Lemma. }}
+
+%source code 
+
+
+
+% cali
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{subfigure}
+
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+
+\newcommand\T{{\mathpalette\raiseT\intercal}}
+\newcommand\raiseT[2]{\raisebox{0.25ex}{$#1#2$}}
+
+\DeclareMathOperator{\cl}{cl}
+%\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\interior}{int}
+\DeclareMathOperator{\Prob}{Prob}
+\DeclareMathOperator{\kernel}{ker}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\determinant}{det}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\range}{rng}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\mse}{mse}
+\DeclareMathOperator{\se}{se}
+\DeclareMathOperator{\row}{row}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\dimension}{dim}
+\DeclareMathOperator{\fracpart}{frac}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\colspace}{colspace}
+
+\providecommand{\inner}[1]{\left\langle{#1}\right\rangle}
+
+% mics short cuts and symbols
+% mics short cuts and symbols
+\newcommand{\st}{\ensuremath{\ \mathrm{s.t.}\ }}
+\newcommand{\setntn}[2]{ \{ #1 : #2 \} }
+\newcommand{\cf}[1]{ \lstinline|#1| }
+\newcommand{\otms}[1]{ \leftidx{^\circ}{#1}}
+
+\newcommand{\fore}{\therefore \quad}
+\newcommand{\tod}{\stackrel { d } {\to} }
+\newcommand{\tow}{\stackrel { w } {\to} }
+\newcommand{\toprob}{\stackrel { p } {\to} }
+\newcommand{\toms}{\stackrel { ms } {\to} }
+\newcommand{\eqdist}{\stackrel {\textrm{ \scriptsize{d} }} {=} }
+\newcommand{\iidsim}{\stackrel {\textrm{ {\sc iid }}} {\sim} }
+\newcommand{\1}{\mathbbm 1}
+\newcommand{\dee}{\,{\rm d}}
+\newcommand{\given}{\, | \,}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+
+\renewcommand{\rho}{\varrho}
+
+\newcommand{\htau}{ \hat \tau }
+\newcommand{\hgamma}{ \hat \gamma }
+
+\newcommand{\boldx}{ {\mathbf x} }
+\newcommand{\boldu}{ {\mathbf u} }
+\newcommand{\boldv}{ {\mathbf v} }
+\newcommand{\boldw}{ {\mathbf w} }
+\newcommand{\boldy}{ {\mathbf y} }
+\newcommand{\boldb}{ {\mathbf b} }
+\newcommand{\bolda}{ {\mathbf a} }
+\newcommand{\boldc}{ {\mathbf c} }
+\newcommand{\boldi}{ {\mathbf i} }
+\newcommand{\bolde}{ {\mathbf e} }
+\newcommand{\boldp}{ {\mathbf p} }
+\newcommand{\boldq}{ {\mathbf q} }
+\newcommand{\bolds}{ {\mathbf s} }
+\newcommand{\boldt}{ {\mathbf t} }
+\newcommand{\boldz}{ {\mathbf z} }
+
+\newcommand{\boldzero}{ {\mathbf 0} }
+\newcommand{\boldone}{ {\mathbf 1} }
+
+\newcommand{\boldalpha}{ {\boldsymbol \alpha} }
+\newcommand{\boldbeta}{ {\boldsymbol \beta} }
+\newcommand{\boldgamma}{ {\boldsymbol \gamma} }
+\newcommand{\boldtheta}{ {\boldsymbol \theta} }
+\newcommand{\boldxi}{ {\boldsymbol \xi} }
+\newcommand{\boldtau}{ {\boldsymbol \tau} }
+\newcommand{\boldepsilon}{ {\boldsymbol \epsilon} }
+\newcommand{\boldmu}{ {\boldsymbol \mu} }
+\newcommand{\boldSigma}{ {\boldsymbol \Sigma} }
+\newcommand{\boldOmega}{ {\boldsymbol \Omega} }
+\newcommand{\boldPhi}{ {\boldsymbol \Phi} }
+\newcommand{\boldLambda}{ {\boldsymbol \Lambda} }
+\newcommand{\boldphi}{ {\boldsymbol \phi} }
+
+\newcommand{\Sigmax}{ {\boldsymbol \Sigma_{\boldx}}}
+\newcommand{\Sigmau}{ {\boldsymbol \Sigma_{\boldu}}}
+\newcommand{\Sigmaxinv}{ {\boldsymbol \Sigma_{\boldx}^{-1}}}
+\newcommand{\Sigmav}{ {\boldsymbol \Sigma_{\boldv \boldv}}}
+
+\newcommand{\hboldx}{ \hat {\mathbf x} }
+\newcommand{\hboldy}{ \hat {\mathbf y} }
+\newcommand{\hboldb}{ \hat {\mathbf b} }
+\newcommand{\hboldu}{ \hat {\mathbf u} }
+\newcommand{\hboldtheta}{ \hat {\boldsymbol \theta} }
+\newcommand{\hboldtau}{ \hat {\boldsymbol \tau} }
+\newcommand{\hboldmu}{ \hat {\boldsymbol \mu} }
+\newcommand{\hboldbeta}{ \hat {\boldsymbol \beta} }
+\newcommand{\hboldgamma}{ \hat {\boldsymbol \gamma} }
+\newcommand{\hboldSigma}{ \hat {\boldsymbol \Sigma} }
+
+\newcommand{\boldA}{\mathbf A}
+\newcommand{\boldB}{\mathbf B}
+\newcommand{\boldC}{\mathbf C}
+\newcommand{\boldD}{\mathbf D}
+\newcommand{\boldI}{\mathbf I}
+\newcommand{\boldL}{\mathbf L}
+\newcommand{\boldM}{\mathbf M}
+\newcommand{\boldP}{\mathbf P}
+\newcommand{\boldQ}{\mathbf Q}
+\newcommand{\boldR}{\mathbf R}
+\newcommand{\boldX}{\mathbf X}
+\newcommand{\boldU}{\mathbf U}
+\newcommand{\boldV}{\mathbf V}
+\newcommand{\boldW}{\mathbf W}
+\newcommand{\boldY}{\mathbf Y}
+\newcommand{\boldZ}{\mathbf Z}
+
+\newcommand{\bSigmaX}{ {\boldsymbol \Sigma_{\hboldbeta}} }
+\newcommand{\hbSigmaX}{ \mathbf{\hat \Sigma_{\hboldbeta}} }
+
+\newcommand{\RR}{\mathbbm R}
+\newcommand{\CC}{\mathbbm C}
+\newcommand{\NN}{\mathbbm N}
+\newcommand{\PP}{\mathbbm P}
+\newcommand{\EE}{\mathbbm E \nobreak\hspace{.1em}}
+\newcommand{\EEP}{\mathbbm E_P \nobreak\hspace{.1em}}
+\newcommand{\ZZ}{\mathbbm Z}
+\newcommand{\QQ}{\mathbbm Q}
+
+
+\newcommand{\XX}{\mathcal X}
+
+\newcommand{\aA}{\mathcal A}
+\newcommand{\fF}{\mathscr F}
+\newcommand{\bB}{\mathscr B}
+\newcommand{\iI}{\mathscr I}
+\newcommand{\rR}{\mathscr R}
+\newcommand{\dD}{\mathcal D}
+\newcommand{\lL}{\mathcal L}
+\newcommand{\llL}{\mathcal{H}_{\ell}}
+\newcommand{\gG}{\mathcal G}
+\newcommand{\hH}{\mathcal H}
+\newcommand{\nN}{\textrm{\sc n}}
+\newcommand{\lN}{\textrm{\sc ln}}
+\newcommand{\pP}{\mathscr P}
+\newcommand{\qQ}{\mathscr Q}
+\newcommand{\xX}{\mathcal X}
+
+\newcommand{\ddD}{\mathscr D}
+
+
+\newcommand{\R}{{\texttt R}}
+\newcommand{\risk}{\mathcal R}
+\newcommand{\Remp}{R_{{\rm emp}}}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ess}{ \textrm{{\sc ess}} }
+\newcommand{\tss}{ \textrm{{\sc tss}} }
+\newcommand{\rss}{ \textrm{{\sc rss}} }
+\newcommand{\rssr}{ \textrm{{\sc rssr}} }
+\newcommand{\ussr}{ \textrm{{\sc ussr}} }
+\newcommand{\zdata}{\mathbf{z}_{\mathcal D}}
+\newcommand{\Pdata}{P_{\mathcal D}}
+\newcommand{\Pdatatheta}{P^{\mathcal D}_{\theta}}
+\newcommand{\Zdata}{Z_{\mathcal D}}
+
+
+\newcommand{\e}[1]{\mathbbm{E}[{#1}]}
+\newcommand{\p}[1]{\mathbbm{P}({#1})}
+
+%\theoremstyle{plain}
+%\newtheorem{axiom}{Axiom}[section]
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{corollary}{Corollary}[section]
+%\newtheorem{lemma}{Lemma}[section]
+%\newtheorem{proposition}{Proposition}[section]
+%
+%\theoremstyle{definition}
+%\newtheorem{definition}{Definition}[section]
+%\newtheorem{example}{Example}[section]
+%\newtheorem{remark}{Remark}[section]
+%\newtheorem{notation}{Notation}[section]
+%\newtheorem{assumption}{Assumption}[section]
+%\newtheorem{condition}{Condition}[section]
+%\newtheorem{exercise}{Ex.}[section]
+%\newtheorem{fact}{Fact}[section]
+
+
+\usepackage[T1]{fontenc}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{assumption}{Assumption}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{observation}{Observation}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+%\input{tcilatex}
+
+\makeatletter
+\def\title@font{\Large\bfseries}
+\let\ltx@maketitle\@maketitle
+\def\@maketitle{\bgroup%
+	\let\ltx@title\@title%
+	\def\@title{\resizebox{\textwidth}{!}{%
+			\mbox{\title@font\ltx@title}%
+	}}%
+	\ltx@maketitle%
+	\egroup}
+\makeatother
+\usepackage{setspace}
+\usepackage{amsmath}
+\onehalfspacing
+\newenvironment{p_enumerate}{
+	\begin{enumerate}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+	}{\end{enumerate}}
+\sectionfont{\centering\mdseries\scshape\bfseries}
+\subsectionfont{\raggedright\mdseries\scshape\bfseries}
+\subsubsectionfont{\flushleft\mdseries\itshape\bfseries}
+\makeatletter
+\def\@seccntformat#1{\csname the#1\endcsname.\quad}
+\makeatother
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+		\hbox{}\nobreak\hfil(#1)%
+		\parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+{\savebox\mybox{#1}\begin{quote}}
+	{\signed{\usebox\mybox}\end{quote}}
+
+\pdfminorversion=4
+
+\makeatletter
+\newcommand{\changeoperator}[1]{%
+	\csletcs{#1@saved}{#1@}%
+	\csdef{#1@}{\changed@operator{#1}}%
+}
+\newcommand{\changed@operator}[1]{%
+	\mathop{%
+		\mathchoice{\textstyle\csuse{#1@saved}}
+		{\csuse{#1@saved}}
+		{\csuse{#1@saved}}
+		{\csuse{#1@saved}}%
+	}%
+}
+\makeatother
+
+\changeoperator{sum}
+\changeoperator{prod}
+
+\begin{document}
+	
+	
+	
+	
+	
+	
+	\title{{Economic Inequality: A Critical Examination %\thanks {}
+			%\title{{Money Demand Breakdown: An international Investigation
+			}}
+			
+			%\date{This version: February, 2016\\
+				%{First version: December, 2015}}
+			\date{May 2023%\\This version: February, 2017}
+		}
+		
+		
+		\author{Memon, Sonan\footnote{Research Fellow, Pakistan Institute of Development Economics, Islamabad. \texttt{smemon@pide.org.pk} and \texttt{sonanahmed8@gmail.com}. This paper did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.}} 
+		
+		\maketitle
+		
+		\vspace{-2ex}
+		
+		
+		\begin{center}
+			\line(1,0){470}
+		\end{center}
+		\begin{spacing}{1.1}
+			\vspace{-3ex}
+			\begin{abstract}
+				\noindent 
+				In this work, I critically examine the burgeoning literature on inequality in economics. I discuss the major empirical stylized facts and arguments presented by economists and some philosophers regarding the deleterious impact of wealth and income inequality on the economy and society. More specifically, I review the admittedly valuable work of Stiglitz, Piketty, Atkinson, Rawls, Nozick, Bowles, Peterson, Friedman and others on the subject.
+				
+				I present several arguments in defense of economic inequality such as its role in creating incentives, growth and urbanization. I also argue that many of the policies proposed for ejecting inequality from the society impede on individual and social freedoms. Moreover, there are theoretical and philosophical conundrums regarding how to share the pie of wealth and income. Lastly, I ask the \textit{why} question and critique the relevance of inequality, making the case that absolute poverty, pain and suffering is the relevant curse which has to be excommunicated from the society rather than the distribution of wealth and income\footnote{The replication code of this paper will be available on my GitHub page: {\color{navyblue}{https://github.com/sonanmemon}}}.
+				%I evaluate the forecasting potential of my method through VAR (Vector Autoregressive Models) models and forecast error variance decompositions (FEVD).
+			\end{abstract}
+		\end{spacing}
+		\textbf{Keywords:} Inequality of Income and Wealth. Inequality in Pakistan. Policy Responses to Inequality. Economics and Philosophy of Inequality. How to Share the Pie and Why? Incentives, Freedom and Urbanization. Poverty and Absolute Suffering.\\
+		\textbf{JEL Classification:} A1, B3:B5, O0:O5, P0:P5, R0, Y8:Y9. {}\\
+		%\textbf{JEL Classifications:}
+		%\\
+		\begin{center}
+			\vspace{-8ex}
+			\line(1,0){470}
+		\end{center}
+		\pagenumbering{arabic}
+		\baselineskip=18pt 
+		
+		\newpage{}
+		
+		\begin{figure}[H]
+			\begin{center}
+				\includegraphics[width=0.4\linewidth]{pidelogo.jpg}		
+				\caption*{}
+			\end{center}
+		\end{figure}
+		
+		\vspace{-8ex}
+		
+		
+		
+		\tableofcontents
+		
+		\newpage{}
+		
+		\vspace{-8ex}
+		
+		
+		\section{Introduction}
+		
+	Much of leftist politics and academia build their narrative on the foundation of inequality in wealth and income at both the international and national levels. For instance, labor's politics in the UK promotes public healthcare i.e the NHS\footnote{National Health Services.} and public education policies to deal with the inequality of opportunities. A case in point is Jeremy Corbyn, the illustrious former head of the labor party in the UK who campaigned against private finance, promoted progressive income taxation, and argued for \pounds 10 per hour minimum, living wages. He has also been a supporter of nationalizing public utilities such as British rail and energy companies. Similarly, the recent gush of socialist rhetoric in ironically the USA, which has hitherto been the church of modern capitalism is yet another example of the centrality of inequality in the public discourse. For instance, Bernie Sanders (refer to his most recent book ``Its Ok to Be Angry About Capitalism'') makes the case against unhinged capitalism and has campaigned for social democratic policies to control inequality and climate catastrophe (see \cite{sanders2023}).
+	
+	
+	Meanwhile, inequality is a highly popular research topic in academia; for the USA, there was a dramatic rise in web searches on economic inequality in the social sciences after the Great Recession in the period from 2009 to 2015 relative to the period 2004 to 2009 and post-2015 \cite{googletrendsinequality}. Economists such as celebrated economist and Nobel laureate Joseph Stiglitz and others such as Thomas Piketty and Anthony Atkinson have highlighted the rise of inequality which they consider damaging for society and the economy (\cite{stiglitz2012}; \cite{piketty2017capital} and \cite{piketty2022brief}).
+	One of the most prominent researchers on inequality, Anthony Atkinson (see \cite{atkinson2015inequality}) has suggested many of proposals to reduce inequality such as progressive  taxation,  social  policy,  and  sharing  of  capital. Some of his specific policy recommendations include the following six in Table 1 below:
+
+	\begin{table} [h!]
+	\begin{center}
+		\begin{tabular}{ |c | c | c | }
+			\hline
+			Top progressive rate at 65\%. & Taxation of Inheritance. \\
+			Proportional property  taxation.  & Earned income discount.\\
+			Participation Income. & Social Insurance.\\
+			\hline
+		\end{tabular}
+	\end{center}
+\caption{Policies Recommended \cite{atkinson2015inequality}.}
+\label {table:1}
+\end{table}
+	
+	
+	
+	
+
+	
+	Many economists' instinctive reaction to the question of inequality is ``so what'', indicating that the inequality phenomenon is uninteresting and inconsequential. \cite{salverda2011oxford} argue that this is factually incorrect since inequality affects various phenomena such as health status, life-expectancy, quality of life, crime and community disruptions and the transmission of poverty from one generation to the next. Hence, understanding the inter-connections between inequality and its myriad social consequences is central. 
+	
+	
+	Whereas, I would argue that inequality is a natural and desirable consequence of a successful economy. Some degree of inequality is not only inevitable but also functional from an economic perspective (see for instance \cite{welch1999defense}). However, substantial attention has been invested in the literature to ways in which higher inequality could act as a barrier to growth, with inequality in capabilities (refer to \cite{sen1995inequality}) for instance, serving to reduce the size of pie. In similar main, prominent heterodox economist \cite{bowles2012new} argued that wealth inequality distorts the production cycle toward sub-optimal outcomes; a case in point is over-production of cotton relative to corn in the Southern US states after the civil war\footnote{1861-1865.} since food merchants and creditors imposed the requirement for cotton production on poor farmers and borrowers under what is known as the crop-lien system\footnote{chapter 2 of \cite{bowles2012new}.}. This is despite the fact that the Cotton South experienced a serious labor shortage following
+	the war, which should have led some farmers to abandon cotton in favor of corn, as the latter was a much less labor-intensive. In sum, some economists at the fringe of the profession have argued that high levels of inequality distorts the economy and public policy toward low efficiency.
+	
+	
+	
+	Lastly, the John Rawls \cite{rawlstheory1971} versus Robert Nozik \cite{nozick1974anarchy} debate on what defines a \textit{just} society is a classic in the literature. Rawls posited the now well-known concept of the \textit{veil of ignorance} under which each person has the full scheme of basic liberties which is commensurate with the scheme of liberties for all. Another principle of the Rawlsian world is that social and economic inequalities must satisfy two conditions: first, they are to be attached to offices and positions open to all under conditions of fair equality of opportunity and second, they are to be to the greatest benefit of the least-advantaged members of society. Whereas, Nozick's \cite{nozick1974anarchy}  theory of  justice  claims that  whether  a  distribution  is  \textit{just}  or  not  depends exclusively  on  how  it came  about and presented the  entitlement  theory  which is primarily concerned with respecting individual rights, especially their rights to  property  and  self-ownership.  Entitlement theory posits that there ought to be justice in acquisition, justice in transfer,  and  rectification  of  injustice but considers the magnitude of inequality to be irrelevant. Nozik criticizes Rawl's ideas on the grounds that they diminish individual liberty and autonomy over the rewards of one's talents and effort.
+	
+	
+	% Another example is the work of Mariana Mazzucato, who has advocated greater public sectorinfluence and leadership in matters of economic policy \cite{mazzucato2021public}. She has also been highly critical of the role of multinationals and consultancies such as McKinsey \& Company, PwC and Deloitte which have stampeded on the public sphere and damaged public capacity for policy making through attracting many bright, young minds \cite{mazzucato2021public}. 
+	 
+	
+	
+%	Sam Bowles and Herbert Gintis, the prominent heterodox economists found that inheritance
+%	operating through superior cognitive performance and educational attainments of those individuals  with  well-off  parents  explain  at  most only  three-fifths  of  the inter-generational transmission of economic status \cite{bowles2002inheritance}. Moreover, while genetic transmission of earnings-enhancing traits appears to play a role, the genetic transmission of IQ appears to be relatively unimportant. Most economists treat income as the sum of returns to the factors of production such as labor skills and capital goods. However, factors such as race, geographical location, height, beauty or other aspects of physical appearance, health status  and  personality drive significant variation in income and wealth; these ``luck'' variables have been understudied in the literature \cite{bowles2002inheritance}.
+
+
+\subsection{Inequality in Pakistan}
+
+	
+	The UNDP report of 2020 has documented national and regional inequality levels in Pakistan. Punjab has the largest regional economy and the highest share in national GDP, followed by Sindh, Khyber Pakhtunkhwa (henceforth KPK), and Baluchistan (refer to \cite{hafizpasha2020}). Whereas, the Gini index\footnote{The Gini index is a standard index to measure inequality and lies between 0 and 1.} is the highest in Sindh, followed by Punjab, while Khyber Pakhtunkhwa (KP) and Baluchistan provinces have the lowest levels of inequality. \cite{hafizpasha2020} have also shown that gender inequality is the highest in Baluchistan, followed by KPK, Sindh and Punjab.
+	
+	 The work of \cite{burki2015multiple}, \cite{burki2020exploring}) and \cite{burki2021LUMS} on inequality in Pakistan is also prominent and noteworthy; these researchers have demonstrated that wealth inequality is more pronounced than income inequality. Nevertheless, income of the top 10\% households has been highly favorable throughout, except for the fiscal Years 2005/06 to 2010/11 period in which the top households lost some income share due to higher vulnerability to the global recession. From 2001/02 to 2015/16, the top 10 percent of households captured 24 percent of the total income growth compared to those in the bottom 50 percent who captured 32 percent of the income growth \cite{burki2021LUMS}. 
+	 
+	 
+	 Among the four provinces, the distribution of household wealth is most unequal in Baluchistan, where the wealthiest 10 percent, 5 percent and 1 percent households own 65 percent, 54 percent and 32 percent of all wealth respectively, while the bottom 60 percent of households own less than 10 percent of all wealth. Based on these measures, wealth is most equally distributed in Sindh, while the wealth shares owned by the households in Punjab and KPK closely follow the national figures \cite{burki2021LUMS}\footnote{These calculations are based on HIES and PSLM 2013/2014 data.}; for a birds-eye view of national and provincial wealth inequalities, refer to the figure below.
+	 
+	 
+	 \begin{figure}[H]
+	 	\centering
+	 	\scalebox{0.8}{\input{WealthInequalityRegionalPakistan.tex}}
+	 	\hfill
+	 	\caption{Data is From HIES/PSLM and \cite{burki2021LUMS}.}
+	 \end{figure}
+	 
+	 
+	
+	We also know that the level of urban inequality is higher than rural inequality in Pakistan. Post-1996-97, there was a spike in urban inequality but the gap in urban versus rural inequality has remained roughly constant since 2000 \cite{burki2015multiple}. Household inequality is typically calculated based on asset scores at the district and tehsil levels which is based on 30 multi-dimensional asset indicators that capture a household's asset profile.  Based on evidence from a 2010-2011 survey, \cite{burki2015multiple} found that disparity between least and most developed districts ranges from $7.61$ for Lahore to $-6.23$ for Rajanpur, southern Punjab; similar inequality exists with respect to road density in Punjab, as demonstrated in the figure 2 below. Generally, the evidence suggests that there is higher and more persistent disparity in southern Punjab compared with northern and central Punjab (\cite{mohey2017exploring} and \cite{burki2021LUMS}).
+	
+	
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=0.8\linewidth]{punjab-road-density.png}		
+			\caption{Lahore Versus Rajanpur \cite{burki2015multiple}}
+		\end{center}
+	\end{figure}
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	%\cite{armytage2020big} has recently published a book on the anthropology of wealth inequality in Pakistan and how the elite perpetuates inequality through not just business integration but political, cultural and marital ties. For instance, the bureaucratic, military, business and landed elite are interwoven through highly rigid marital ties which help extend and diversify the economic and political power of the elite. 
+	
+
+     \subsection{Situating Pakistan In the Global Context}
+	
+	In Pakistan, the share of the top 1\% in national wealth was around 26\% in 2021. Meanwhile, the share of top 10\% individuals in wealth was close to 60\%. The share of bottom 50\% individuals in aggregate wealth was close to 4.6\%; the data is based on standardized world inequality database \url{https://wid.world/country/pakistan/} (see \cite{solt2016standardized}). For a comparison with Bangladesh, India, USA, France and South Africa in terms of top 1\%, 10\% and bottom 50\% wealth and income shares, refer to the tables 2 and 3 below. It is clear that South Africa stands out as the most unequal country in this group and USA is the second most unequal. Meanwhile, India is the most unequal country in South Asia and Pakistan is second most unequal in the region; Bangladesh is marginally less unequal than Pakistan is. Meanwhile, wealth inequality in France is almost the same as it is in Pakistan. 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		\begin{table}[H]%
+		\def\arraystretch{1}
+		\begin{center}
+			{\sc \caption{Wealth Shares As of 2021 (Top 1\%, Top 10\% and Bottom 50\%)}}
+			\begin{adjustbox}{width=0.8\textwidth}
+				\setlength{\tabcolsep}{1pt}
+				\resizebox{\textwidth}{!}{
+					\begin{tabular}{lcccccccc}
+						\multicolumn{6}{c}{} \\ \hline
+						\textbf{Country}  & \textbf{Top 1\%} && \textbf{Top 10\%} && \textbf{Bottom 50\%} \\
+						\specialrule{1pt}{0pt}{0pt} %inserts single line
+						%\textbf{Categories} \\
+						Pakistan & 26\% && 60\% && 4.8\%  \\
+						India & 32\% && 64\% && 6\% \\
+						Bangladesh & 24.6\% && 58.4\% && 4.8\% \\
+						USA & 35\% && 70.7\% && 1.5\% \\
+						South Africa & 54.9\% && 85.6\% && -2.5\% \\
+						France & 26.8\% && 59.3\% && 4.9\% \\
+						\specialrule{0.5pt}{0pt}{0pt}
+						\hline
+						\hline
+				\end{tabular}}
+			\end{adjustbox}
+		\end{center}
+		{\footnotesize{Note: World Inequality Database.}} % is used to refer this table in the text
+	\end{table}
+
+
+In Table 2, similar data is presented for income rather than wealth. It is evident that due to the nature of inheritance of wealth and opportunities for upward mobility in labor markets, income inequality is always lower than wealth inequality for all countries. India continues to be the most unequal country in South Asia even in terms of income. Meanwhile, the similar degrees of wealth inequality in France and Pakistan no longer exist when it comes to income inequality, where France is significantly more equal than Pakistan is. Figure 1 summarizes the top 1\% wealth and income shares for all the six countries.
+
+	
+	
+	
+		\begin{table}[H]%
+		\def\arraystretch{1}
+		\begin{center}
+			{\sc \caption{Income Shares As of 2021 (Top 1\%, Top 10\% and Bottom 50\%)}}
+			\begin{adjustbox}{width=0.8\textwidth}
+				\setlength{\tabcolsep}{1pt}
+				\resizebox{\textwidth}{!}{
+					\begin{tabular}{lcccccccc}
+						\multicolumn{6}{c}{} \\ \hline
+						\textbf{Country}  & \textbf{Top 1\%} && \textbf{Top 10\%} && \textbf{Bottom 50\%} \\
+						\specialrule{1pt}{0pt}{0pt} %inserts single line
+						%\textbf{Categories} \\
+						Pakistan & 16.7\% && 42.8\% && 17.3\%  \\
+						India & 21.7\% && 57.1\% && 13.1\%  \\
+						Bangladesh & 16.2\% && 42.4\% && 17.1\%  \\
+						USA & 19\% && 45.6\% && 13.8\%  \\
+						South Africa & 19.3\% && 65.4\% && 5.8\%  \\
+						France & 8.9\% && 31.2\% && 23.2\%  \\
+						\specialrule{0.5pt}{0pt}{0pt}
+						\hline
+						\hline
+				\end{tabular}}
+			\end{adjustbox}
+		\end{center}
+		{\footnotesize{Note: Data is from World Inequality Database.}} % is used to refer this table in the text
+	\end{table}
+
+
+The following figure presents a visual representative of income and wealth inequality for the six countries under consideration in 2021. The extremely high wealth inequality in South Africa and low income inequality in France is evident below. 
+
+
+	\begin{figure}[H]
+	\centering
+	\scalebox{0.6}{\input{InequalityG1.tex}}
+	\hfill
+	\caption{Data is From World Inequality Database}
+\end{figure}
+	
+	
+	
+	
+	
+	
+Hence, the main thrust of the argument is that Pakistan has high levels of inequality but this is an international phenomenon due to the evolution of international markets, technology and capitalism. One must be cognizant of this broader, global context of inequality which makes Pakistan appear as less of an anomaly than the leftist propaganda in the country and beyond would have one belief. Of course, the conventional response from left-leaning thinkers would be that inequality is indeed a global problem and a consequence of unhinged capitalism which is a global order. At the very least, this data must convince a critical thinker that Pakistan's capitalist class is not the worst possible vampire which sucks labor surpluses in the most pernicious possible way \`a la Marx. As far as global inequality is concerned, I later present arguments which question whether inequality is really as devastating for the society and economy as many leftists have argued.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	%	\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
+	%		\hline
+		%		\multicolumn{4}{|c|}{Policies} \\
+		%		\hline
+		%		Country Name or Area Name & ISO ALPHA 2 Code &ISO ALPHA 3 Code&ISO numeric Code\\
+		%		\hline
+			%	Afghanistan   & AF    &AFG&   004\\
+		%		Aland Islands&   AX  & ALA   &248\\
+		%		Albania &AL & ALB&  008\\
+		%		Algeria    &DZ & DZA&  012\\
+		%		American Samoa&   AS  & ASM&016\\
+		%		Andorra& AD  & AND   &020\\
+		%		Angola& AO  & AGO&024\\
+		%		\hline
+		%	\end{tabular}
+	
+		
+		
+
+			
+		
+		
+		\section{In Defense of Inequality}
+		
+		
+		The issue of economic inequality is often seen with a gloom-ridden and apocalyptic lens by academics and politicians who view the distribution of wealth/income as central. However, the objective of this work is to inject some pragmatism and eject extreme idealism from this debate.
+		
+		Despite the increase in wealth and income inequality over time, capitalism has generated a lot of prosperity and wealth in the first world and the third world. It is well-known that global life-expectancy, welfare, economic prosperity, women's engagement in the society and economy have increased over the last couple of centuries. Even violence has gone down and quality of life has increased for a majority of population, relative to let's say the 17th century. For detailed and substantial evidence refer to the brilliant book written by Harvard-based psychologist Steven Pinker \cite{pinker2011better}. Pinker has also argued that this phenomenal progress to which some deaf minds are blind is attributable to the values of enlightenment such as rationality, liberty, freedom of thought and expression (see for instance \cite{pinker2018enlightenment} and \cite{pinker2022rationality}).
+		
+	    Next, I critique Pikettty's work on inequality and present arguments in favor of high levels of inequality in society based on incentives and freedoms, technical and philosophical problems with determining optimal distribution, why to distribute wealth as long as suffering and poverty is controlled and lastly, growth and urbanization made possible by capital flight toward cities.
+	
+		
+		
+		
+		\subsection{Technical Problems with Piketty} 
+		
+		
+		\cite{soskice2014capital} argues that the framework of \cite{piketty2017capital} in the highly popular and acclaimed work ``Capital in the 21st Century'' is a highly stylized, neoclassical model which assumes that savings equal investment and hence, conflates the high levels of savings relative to growth after the 1970's as equivalent to a high capital to savings ratio. In reality, saving lead to investment through businesses which are vulnerable to business cycle fluctuations and creative destruction over time. In fact, the significant rise in wealth was in property, and largely reflects house price inflation \cite{bonnet2014does} rather than high returns on overall savings.
+		
+		Piketty also does not adequately acknowledge the role of technology in driving returns on investment in recent decades and the political decisions which allows capital mobility and financial liberalization; he seems to argue that the capture of democracy by capitalism is at the root of the growth of inequality yet does not ask why decisive (middle-class) voters in most (but not all) well-functioning democracies have been opposed to redistribution to compensate the losers of the shift from \textit{Fordism} to knowledge economies. Thus, at worst, he presents merely a reductionist, quasi-Marxist position that a high capital to output ratio gives capital political power, with the latter allowing the development of a range of other inequalities without an account of compensatory, democratic political responses.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		\subsection{Incentives and Freedom}
+		
+		Inequality is a natural consequence of free exchange of trade, inheritance of social and economic capital, and minimal state involvement in the economy, and this is the ideal way for organizing society. Inequality creates incentives and motivation. Naturally, the creative destruction process in markets creates winners and losers which creates inequality of \textit{outcomes}.
+		
+		
+		Arthur Laffer made the classical and well-known argument that taxation creates disincentives for business expansion, growth, innovation and progress \cite{laffer2004laffer} and hence there is a laffer curve which dictates the optimal level of taxation on profits and incomes which is clearly less than 100\%. \cite{trabandt2011laffer} calculated the empirical properties of laffer curve and demonstrated that the US can increase revenues by 30\% (6\%) if labor (capital) taxes are raised. For the EU, the numbers are 8\% and 1\% respectively. 
+
+		
+		Many possible policies which will reduce inequality stampede on individual freedoms. Those who worry about inequality often promote politics and policies which promote an extreme and oppressive dictatorship of the majority. What is interesting is that in the process of eliminating class structure, socialism creates other oppressive forms of state hierarchies which are even worse than the market produced hierarchies due to government failure (see for instance \cite{le1991theory}).
+		
+	
+		\subsection{How to Distribute?}
+		
+		Another problem with the critique of unequal income and wealth distribution emerging from markets is that there are various political and philosophical problems with any proposal to redistribute the outcomes of market forces. For instance, Ronald Coase proved the celebrated \textit{Coase Theorem} (see \cite{coase1981coase}) for which he was awarded the Nobel prize in economics which basically established that under certain conditions, the initial ownership of property is irrelevant; the ownership of wealth could be public or private but it would lead to the same ultimate distribution of wealth.
+		
+		Furthermore, there are infinitely many ways to share the aggregate pie and it is impossible to decide how to optimally re-allocate the legally earned wealth or income of one group of people toward another. Of course, in order to maintain property rights and security of life and liberty, we have to finance and feed a minimalist state apparatus for maintaining the social organization. However, when the state grows out of proportion and becomes excessively empowered, it can go toward two possible extreme directions: it either imposes an undesirable dictatorship of majority or even more commonly imposes a de facto dictatorship of state which only benefits the ruling elite. On the other hand, the distribution under a free market society is determined by the winners of market enterprises which are not dictatorial under the right set of conditions.
+		
+		
+		
+		\subsection{Why to Distribute?}
+		
+		
+		
+		
+		
+		The state is oppressive. Empowering the state is only worthwhile when it comes to ensuring basic law enforcement and property rights Acemoglu and Robinson's influential work reveals evidence on property rights \cite{robinson2012nations} and \cite{friedman1989machinery}.
+		 The result of distribution is a generalization of what \cite{okun1975big}
+		called redistribution in \textit{leaky buckets:} the net benefit to the
+		recipient may fall considerably short of the loss to those
+		paying the costs. In a democracy, leaky buckets thus make it more difficult to secure government support for egalitarian redistribution programs.
+		
+	Critique this shit:	``The modern welfare state is a remarkable human achievement.
+		In Europe and North America, a substantial fraction of
+		total income is regularly transferred from the better-off to the
+		less well-off, and the governments that preside over these
+		transfers are regularly endorsed by public \cite{atkinson2015inequality}.
+		Strong reciprocity is a propensity to co-operate and
+		share with others similarly disposed, even at personal cost,
+		and a willingness to punish those who violate co-operative
+		and other social norms, even when punishing is personally
+		costly and cannot be expected to result in net personal gains
+		in the future. Strong reciprocity goes beyond self-interested
+		forms of co-operation, which include acting tit-for-tat and
+		what biologists call reciprocal altruism \cite{trivers1971evolution},
+		which is really just self-interest with a long time horizon'' \cite{bowles2012new}.
+		
+		
+		
+		
+		
+		
+		As Jordan Peterson and other scholars have argued, the real question is not why there is so much inequality but why would anyone want to occupy those top economic and political positions in the first place? I would not want to. David Friedman, and Milton Friedman: Poverty is a problem. Inequality is not a problem.
+		
+		
+		
+		
+
+		
+		\subsection{Urbanization}
+		
+		
+		Inequality creates jobs and concentrated capital flows toward some large and winner, cities such as Mumbai, Karachi, Lahore, New York, and Tokyo. These magnificent cities which by their very existence and dynamism, are achievements would be impossible without flight of capital toward high return investment locations. Hence, these cities owe their grandeur to capitalism and its achievements.
+		
+		\cite{glaeser2013triumph}.
+		
+		technical models: cities, agglomeration and spatial equilibrium \cite{glaeser2008cities}.
+		
+		
+		``The first answer to this question is that cities arise at critical points in the transportation system to facilitate trade between regions. Due to economies of scale in transportation, shipping is typically cheaper in large batches. Still today, most cities are located around harbors, rivers, and railroad and highway crossings. These sites offer advantages to large firms that ship their products to many different locations. Large firms exist because of internal economies of scale: cost advantages enjoyed by firms producing large quantities of a product. Large firms employ many workers, and these workers tend to live near the firm. The concentration of homes in turn attracts stores, restaurants, and other services that cater to the residents. The original transport advantage becomes the catalyst for diverse economic activity that begets more activity. Steel in Pittsburgh, meat packing in Chicago, and beer brewing in St. Louis are examples of industries with internal economies of scale that were attracted to cities offering significant transportation cost advantages'' \cite{brueckner2011lectures}.
+		
+		``Cities also attract economic activity because of agglomeration economies, a term used to denote cost advantages enjoyed by a firm simply because other firms are located in the vicinity. Agglomeration economies are traditionally classified as localization or urbanization economies. A localization economy is a cost advantage that accrues to all firms operating in an industry as that industry expands within an urban area. For example, Silicon Valley in California's Santa Clara County has many small firms that together comprise a very large industry. Among other reasons, these firms find it worthwhile to locate in Silicon Valley because it is easy to hire the right workers in an area with a very large concentration of high-tech firms. In contrast, urbanization economies are cost advantages that are enjoyed by firms even when there are few other firms in the urban area in the same industry. A large urban area provides enough demand that even highly specialized companies can find local firms to provide a service, rather than having to provide the service internally with their own employees at a higher cost'' \cite{brueckner2011lectures}.
+		
+		
+		
+		
+		``The technological stagnation of agrarian society allowed the
+		endless repetition of the same production process; individuals
+		could perform the same jobs based on the same skills from one
+		generation to the next. Cultural diversity among all except the
+		elite stabilized these roles. It limited both horizontal and vertical
+		mobility, and allowed the reproduction of the social
+		fabric over time. Cultural diversity – both between the elite
+		and the rest, and among the rest – was both a condition for and
+		a result of societal inertia''. But the broadening scope of goods markets and eventually
+		the emergence of labor markets and other capitalist economic
+		institutions radically altered the cultural requirements of
+		economic life. Again, Gellner:
+		For the first time in human history, explicit and reasonably precise
+		communication becomes generally, pervasively used and
+		important'' \cite{bowles2012new}.
+			
+
+		
+		
+		
+		
+		%More generally, all means-tested entitlement benefits contribute to inequality of income and wealth. The reason: they discourage work and income earning. Unemployment insurance benefits, food stamps, Medicaid — all these programs and more contribute to inequality.
+		%For almost any skill or attribute, think of a bell-curve distribution. Most people are near the middle of the distribution, while the most accomplished 2\% are way out on the right tail. Now think about how your life is richer and more fulfilling and enjoyable because of the 2\%. If you could take a magic wand and remove the 2\% who are the best football payers, how enjoyable would Sunday TV football games be? Would you watch at all if the players on the field were all of “average” ability?. The same principle can be applied to other sports (baseball, basketball, hockey, etc.), to music (what if there were no Beethoven, Mozart, or Rachmaninoff?), to film (what if there were no Bette Davis or Humphrey Bogart?) and to singing (no Beyoncé or Bob Dylan or the Beatles?)
+		
+		
+		\section{Conclusion}
+		
+		
+		The main objective of this discursive work is to summarize and critically evaluate the debate on inequality and social justice. I have tried to place the issue of inequality in historical and factual context in order to evaluate it as objectively as possible.
+		
+		My arguments aim to make the case that impact of inequality on human welfare, well-being and fulfillment is exaggerated in much of the literature. I take a more pragmatic and non-utopian perspective on the issue and point out that social conditions which lead to inequality are desirable relative to some alternatives. I even argue that inequality itself is also desirable to create incentives for progress; there is no objective technique available for dividing the pie and hence, it is better to let the distribution issue to addressed by the invisible hand of markets. Inequality in and of itself is a peripheral issue; the real and relevant problems to solve are absolute \textit{poverty}, malnourishment, and disease. For instance, Northwestern University has recently done some path breaking research which has solved the blood-brain barrier, a major bottle-neck which made it impossible to test 80 to 90\% of chemotherapy drugs for brain cancer treatment \cite{schoen2022towards}. Without excellent private universities such as Northwestern and Harvard University which create incentives through market interaction, revolutionary breakthroughs will be less attainable.
+		
+		
+		Given the unprecedented, historical success of capitalism in increasing life-expectancy, welfare and reducing poverty, one should appreciate the hitherto organization of society and economics, and weed out idealism, romanticism and an artificial desire for equity and social justice warfare.
+		
+	
+		
+		
+		
+
+		%_________________ End of Main Matter_________________%
+		%_________________ Reference Section _______________%
+		\phantomsection % allows for correct link to Table of Contents
+		%\addcontentsline{toc}{section}{References} % Adds the line "References" to Table of contents
+		\singlespacing
+		%\bibliography{references} % Uses the Bibtex-file mybibfile.bib
+	%	\newpage
+		\bibliographystyle{aer}
+		\bibliography{references}
+		\clearpage
+		%_________________ Space for Supplementary Material _______________%
+		
+		
+		
+		
+		
+		
+		\newpage
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	\end{document}
+	
+	
+	

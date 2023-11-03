@@ -13,7 +13,6 @@
 \usepackage{lmodern}
 \usepackage{caption}
 \usepackage[table]{xcolor}
-\usepackage{subfigure}
 \usepackage{bigints}
 \usepackage{bbm}
 \usepackage{xr}
@@ -31,7 +30,6 @@
 \newcommand{\navy}[1]{\textcolor{blue}{\bf #1}}
 \newcommand{\navymth}[1]{\textcolor{blue}{#1}}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
-\usepackage{subfigure}
 \usepackage[authoryear,round]{natbib}
 \usepackage{sectsty}
 \usepackage{multirow}
@@ -111,7 +109,7 @@
 % cali
 \usepackage{mathrsfs}
 \usepackage{bbm}
-\usepackage{subfigure}
+\usepackage{subfig}
 
 \newcommand{\argmax}{\operatornamewithlimits{argmax}}
 \newcommand{\argmin}{\operatornamewithlimits{argmin}}
@@ -390,7 +388,7 @@
 			
 			%\date{This version: February, 2016\\
 				%{First version: December, 2015}}
-			\date{August 2023%\\This version: February, 2017}
+			\date{November 2023%\\This version: February, 2017}
 		}
 		
 		
@@ -408,7 +406,7 @@
 			\vspace{-3ex}
 			\begin{abstract}
 				\noindent 
-				I critically examine the burgeoning literature on inequality in economics. I discuss major empirical stylized facts and arguments presented by economists and some philosophers regarding the deleterious impact of wealth and income inequality on the economy and society. More specifically, I primarily consider the pioneering work of Stiglitz, Piketty, Atkinson, Rawls, Nozick, Bowles and Laffer in my discourse.
+				I critically examine the burgeoning literature on inequality in economics. I discuss major empirical stylized facts and arguments presented by economists and some philosophers regarding the deleterious impact of wealth and income inequality on the economy and society. More specifically, I primarily consider the pioneering work of Stiglitz, Piketty, Atkinson and Bowles for my critical discourse.
 				
 				Next, I present several arguments in defense of economic inequality by establishing its role in creating incentives, economic growth and urbanization. I also argue that many of the policies proposed for ejecting inequality from the society impede on individual and social freedoms. Moreover, there are theoretical and philosophical conundrums regarding how to share the pie of wealth and income which stifle attempts to redistribute in the society. Lastly, I ask the \textit{why} question by interrogating the relevance of inequality, making the case that absolute \textit{poverty, pain and suffering} are the relevant curses which have to be excommunicated from an ideal society rather than the distribution of wealth and income\footnote{The replication code of this paper will be available on my GitHub page: {\color{navyblue}{https://github.com/sonanmemon}}}.
 				%I evaluate the forecasting potential of my method through VAR (Vector Autoregressive Models) models and forecast error variance decompositions (FEVD).
@@ -447,14 +445,14 @@
 		
 		\section{Introduction}
 		
-	The most up to date and recognized data suggests that an average adult individual earns PPP adjusted \footnote{in purchasing power parity terms} 23,380 USD\footnote{US Dollar.}  per  year  in  2021  and  the  average  adult  owns 102,600 USD as wealth \cite{chancel2022world}. The  richest  10\% of the global population currently takes 52\%  of  global  income,  whereas  the  poorest  half  of  the  population  earns  8.5\%  of  it. On  average,  an  individual  from  the  top  10\%  of  the global income distribution earns USD 122,100  per year, whereas an individual from  the  poorest  half  of  the  global  income  distribution  makes USD 3,920  per  year. Global  wealth  inequalities  are  even  more  pronounced  than  income  inequality. The  poorest half of the global population owns 2\% of the total wealth. In contrast, the richest 10\% of the global population own 76\% of all wealth \cite{chancel2022world}.
+	The most up to date and recognized data suggests that an average adult individual earned PPP adjusted \footnote{ In purchasing power parity terms.} 23,380 USD\footnote{US Dollar.} per  year  in  2021  and  the  average  adult owned 102,600 USD as wealth \cite{chancel2022world}. The  richest  10\% of the global population earns around 52\%  of global  income,  whereas  the  poorest  half  of  the  population  earns  8.5\%  of  it. On  average,  an  individual  from  the  top  10\%  of the global income distribution earns USD 122,100  per year, whereas an individual from  the  poorest  half  of  the  global  income  distribution  makes USD 3,920  per  year. Global  wealth  inequalities  are  even  more  pronounced  than  income  inequality due to their persistent nature owing to inheritance and other factors. While he  poorest half of the global population owned 2\% of the total global wealth, the richest 10\% of the global population owned 76\% of all global wealth \cite{chancel2022world}. Clearly, the theoretical Gini coefficient of 0 where there is perfect equality of wealth and income i.e all human beings look the same, do the same and achieve the same is far from the reality.
 	
 	
 	
-	Much of leftist politics builds its narrative and justification on the foundation of this high inequality in wealth and income at both the international and national levels. For instance, labor's\footnote{Labor Party.} politics in the UK promotes public healthcare i.e the NHS\footnote{National Health Services.} and public education policies to deal with the inequality of opportunities. A case in point is Jeremy Corbyn, the illustrious former head of the labor party in the UK who campaigned against private finance, promoted progressive income taxation, and argued for \pounds 10 per hour minimum living wages. He has also been a supporter of nationalizing public utilities such as British rail and energy companies. Similarly, the recent gush of socialist rhetoric in ironically the USA, which has hitherto been the church of modern capitalism is yet another example of the centrality of inequality in the public discourse. For instance, Bernie Sanders (refer to his most recent book ``Its Ok to Be Angry About Capitalism'') makes the case against unhinged capitalism and has campaigned for social democratic policies to control inequality and prevent climate catastrophe (see \cite{sanders2023}).
+	Much of leftist politics builds its narrative and justification on the foundation of this high inequality in wealth and income at both the international and national levels. For instance, labor's\footnote{Labor Party.} politics in the UK promotes public healthcare i.e the NHS\footnote{National Health Services.} and public education policies to deal with the inequality of opportunities. Historically, labor has campaigned against private finance, promoted progressive income taxation, and argued for \pounds 10 per hour minimum living wages in the past. It has also been a supporter of nationalizing public utilities such as British rail and energy companies. Similarly, the recent gush of socialist rhetoric in ironically the USA, which has hitherto been the church of modern capitalism is yet another example of the centrality of inequality in the public discourse. For instance, Bernie Sanders (refer to his most recent book ``Its Ok to Be Angry About Capitalism'') makes the case against unhinged capitalism and has campaigned for social, democratic policies to control inequality and prevent climate catastrophe (see \cite{sanders2023}). While we are far from a socialist revolution which desired the alleged ``vermin'' of the earth\footnote{i.e the ``workers''} to unite and overthrow the capitalist class, concern over distribution of economic gains continue to animate debate in politics; perhaps the ``end of history'' has not arrived yet.
 	
 	
-	Meanwhile, inequality is a highly popular research topic in academia; for the USA, there was a dramatic rise in web searches on economic inequality in the social sciences after the Great Recession in the period from 2009 to 2015 relative to the period 2004 to 2009 and post-2015 \cite{googletrendsinequality}. Economists such as celebrated economist and Nobel laureate Joseph Stiglitz and others such as Thomas Piketty and Anthony Atkinson have highlighted the rise of inequality which they consider damaging for society and the economy (\cite{stiglitz2012}; \cite{piketty2017capital} and \cite{piketty2022brief}). One of the most prominent researchers on inequality, Anthony Atkinson (see \cite{atkinson2015inequality}) has suggested many policy proposals to reduce inequality such as progressive  taxation,  other affirmative action type social policies,  and  sharing  of  capital for investment. Some of his specific recommendations are listed in the Table 1 below. These policies treat earned income differently from inherited wealth and property in terms of taxation and they propose high levels of progressive taxation. Lastly, they also advocate social insurance and targeted welfare schemes to address inequality of opportunities \textit{and} outcomes in health, education and other sectors.
+	Meanwhile, inequality is a highly popular research topic in academia; for the USA, there was a dramatic rise in web searches on economic inequality in the social sciences after the Great Recession in the period from 2009 to 2015 relative to the period 2004 to 2009 and post-2015 \cite{googletrendsinequality}. Economists such as celebrated economist and Nobel laureate Joseph Stiglitz and others such as Thomas Piketty and Anthony Atkinson have highlighted the rise of inequality, which they consider damaging for society and the economy (\cite{stiglitz2012}; \cite{piketty2017capital} and \cite{piketty2022brief}). One of the most prominent researchers on inequality, Anthony Atkinson (see \cite{atkinson2015inequality}) has suggested many policy proposals to reduce inequality such as progressive  taxation,  other affirmative action driven social policies,  and  social sharing  of  capital for investment. Some of\cite{atkinson2015inequality}'s specific recommendations are listed in the Table 1 below. These policies treat earned income differently from inherited wealth and property in terms of taxation and they propose high levels of progressive taxation. Lastly, they also advocate social insurance and targeted welfare schemes to address inequality of opportunities \textit{and} outcomes in health, education and other sectors.
 	
 	\begin{table} [h!]
 	\begin{center}
@@ -469,25 +467,29 @@
 \caption{Policies Recommended \cite{atkinson2015inequality}.}
 \label {table:1}
 \end{table}
+
+
+In political philosophy, the John Rawls \cite{rawlstheory1971} versus Robert Nozik \cite{nozick1974anarchy} debate on what defines a \textit{just} society is a classic in political philosophy. Rawls posited the concept of the \textit{veil of ignorance} under which each person should have the full scheme of basic liberties, commensurate with the scheme of liberties for all; in other words, pursuit of freedom for one individual does not clash with the liberties of all. In the Rawlsian world, social and economic inequalities must satisfy two conditions: first, they must be attached to opportunities open for everyone under conditions of equal opportunity and second, they must create the greatest benefit for the least-advantaged members of society. Whereas, Nozick's \cite{nozick1974anarchy} theory of  justice  claims that  whether  a  distribution  is  \textit{just}  or  not  depends exclusively  on  \textit{how}  it came  about to be so. His theory posits that there ought to be \textit{justice} in acquisition, in transfer, and  rectification  of injustice but considers the magnitude of inequality in outcomes to be irrelevant.
+
+
+
+However, I would argue that high levels of inequality is a natural and desirable consequence of a successful economy. Inequality is not only inevitable but also functional from an economic perspective (see for instance \cite{welch1999defense}). As far as the magnitude of inequality is concerned, whether it is too low or high is a complex question which must be seen in historical context rather than compared against some socialist utopia or hunter gatherer societies, both of which are not reasonable vantage points. Even if inequality has been on the rise in recent history and is exceeding ``reasonable'' thresholds as is implicit in the thesis of \cite{piketty2017capital}, one has to be careful in suggesting mitigation policies. The historical analysis of change in inequality is necessary and interesting but must not be casually used as a weapon for policies which do more harm to the social fabric than solve problems. For instance, several policies which are normally proposed to reduce inequality create capital flight, distort incentives for investment and innovation, curtail individual freedoms and push toward a path of state-led repression and slavery of the population \cite{friedrich1945road}.
 	
 	
 	
 	
 
 	
-	%Many economists' instinctive reaction to the question of inequality is ``so what'', indicating that the inequality phenomenon is uninteresting and inconsequential. \cite{salverda2011oxford} argue that this is factually incorrect since inequality affects various phenomena such as health status, life-expectancy, quality of life, crime and community disruptions and the transmission of poverty from one generation to the next. Hence, understanding the inter-connections between inequality and its myriad social consequences is central. 
+	%Many economists' instinctive reaction to the question of inequality is ``so what'', indicating that the inequality phenomenon is uninteresting and inconsequential. 
 	
-	
-	Whereas, I would argue that inequality is a natural and desirable consequence of a successful economy. Inequality is not only inevitable but also functional from an economic perspective (see for instance \cite{welch1999defense}). As far as the magnitude of inequality is concerned, whether it is too low or high is a complex question which must be seen in historical context rather than compared against some socialist utopia or hunter gatherer societies, both of which are not reasonable vantage points.	
-	
-	However, substantial attention has been invested in the literature to ways in which higher inequality could act as a barrier to growth. For instance, prominent heterodox economist Samuel Bowles (see \cite{bowles2012new}) argued that wealth inequality distorts the production cycle toward sub-optimal outcomes; a case in point is over-production of cotton relative to corn in the southern US states after the civil war\footnote{During 1861-1865 AD.}. Basically, food merchants and creditors imposed the requirement for cotton production on poor farmers and borrowers under what is known as the crop-lien system\footnote{chapter 2 of \cite{bowles2012new}.} since cotton was more durable for storage. This is despite the fact that the \textit{cotton south} experienced a serious labor shortage following the war, which should have led some farmers to abandon cotton in favor of corn, as the latter was a much less labor-intensive. In sum, some economists have argued that high levels of inequality distorts the economy toward low efficiency outcomes. My response to this work is that any market interaction and equilibrium emerges from the preferences and incentives of all the parties involved. Surely, in many cases, the first best equilibrium from the perspective of one player cannot be achieved since it is not in the interest of the other player. The crop-lien system led to sub-optimal outcome for the farmers but benefited the creditors for whom the cotton production was an optimal outcome. Hence, why should the optimal outcome from the perspective of farmers be treated as the ideal with which the reality has to be compared with? 
-	
-	
-	Bowles and Herbert Gintis who are prominent heterodox economists also argued that inheritance operating through superior cognitive performance and educational attainments of those individuals  with  well-off  parents  explain  at  most only  three-fifths  of  the inter-generational transmission of economic status \cite{bowles2002inheritance}. Moreover, while genetic transmission of earnings-enhancing traits appears to play a role, the genetic transmission of IQ appears to be relatively unimportant. Most economists treat income as the sum of returns to the factors of production such as labor skills and capital goods. However, factors such as race, geographical location, height, beauty or other aspects of physical appearance, health status  and  personality drive significant variation in income and wealth; these ``luck'' variables have been understudied in the literature \cite{bowles2002inheritance}. While I certainly accept the role of luck and individual traits in labor market outcomes; however the ``so what'' question still remains. Clearly, some individual traits are preferred over others in the market and even the matching market for marriage for instance; however the implicit argument in the work of \cite{bowles2002inheritance} is that one ought to view these unequal outcomes as problematic which require political and social rectification.
+	%\cite{salverda2011oxford} argue that this is factually incorrect since inequality affects various phenomena such as health status, life-expectancy, quality of life, crime and community disruptions and the transmission of poverty from one generation to the next. Hence, understanding the inter-connections between inequality and its myriad social consequences is central. 
 	
 	
 	
-	Lastly, the John Rawls \cite{rawlstheory1971} versus Robert Nozik \cite{nozick1974anarchy} debate on what defines a \textit{just} society is a classic in political philosophy. Rawls posited the concept of the \textit{veil of ignorance} under which each person should have the full scheme of basic liberties, commensurate with the scheme of liberties for all; in other words, pursuit of freedom for one individual does not clash with the liberties of all. In the Rawlsian world, social and economic inequalities must satisfy two conditions: first, they must be attached to opportunities open for everyone under conditions of equal opportunity and second, they must create the greatest benefit for the least-advantaged members of society. Whereas, Nozick's \cite{nozick1974anarchy}  theory of  justice  claims that  whether  a  distribution  is  \textit{just}  or  not  depends exclusively  on  \textit{how}  it came  about to be so. Nozick is primarily concerned with respecting individual rights, especially rights to property  and  self-ownership. His theory posits that there ought to be \textit{justice} in acquisition, in transfer, and  rectification  of injustice in this sense but considers the magnitude of inequality in outcomes to be irrelevant. He criticizes Rawl's ideas on the grounds that they diminish individual liberty and autonomy over the rewards of one's talents and effort.
+
+	
+	
+	
 	
 	
 	% Another example is the work of Mariana Mazzucato, who has advocated greater public sectorinfluence and leadership in matters of economic policy \cite{mazzucato2021public}. She has also been highly critical of the role of multinationals and consultancies such as McKinsey \& Company, PwC and Deloitte which have stampeded on the public sphere and damaged public capacity for policy making through attracting many bright, young minds \cite{mazzucato2021public}. 
@@ -498,7 +500,11 @@
 %	operating through superior cognitive performance and educational attainments of those individuals  with  well-off  parents  explain  at  most only  three-fifths  of  the inter-generational transmission of economic status \cite{bowles2002inheritance}. Moreover, while genetic transmission of earnings-enhancing traits appears to play a role, the genetic transmission of IQ appears to be relatively unimportant. Most economists treat income as the sum of returns to the factors of production such as labor skills and capital goods. However, factors such as race, geographical location, height, beauty or other aspects of physical appearance, health status  and  personality drive significant variation in income and wealth; these ``luck'' variables have been understudied in the literature \cite{bowles2002inheritance}.
 
 
-\subsection{Inequality in Pakistan}
+
+
+
+
+\section{Inequality in Pakistan}
 
 	
 	The UNDP report of 2020 has documented national and regional inequality levels in Pakistan. Across provinces, Punjab has the largest regional economy and highest share in national GDP, followed by Sindh, Khyber Pakhtunkhwa (henceforth KPK), and Baluchistan (refer to \cite{hafizpasha2020}). Whereas, the Gini index\footnote{The Gini index is a standard index to measure inequality and lies between 0 and 1.} is the highest in Sindh, followed by Punjab, while Khyber Pakhtunkhwa (KP) and Baluchistan provinces have the lowest levels of inequality. This report (see \cite{hafizpasha2020}) has also shown that gender inequality is the highest in Baluchistan, followed by KPK, Sindh and Punjab.
@@ -542,7 +548,7 @@
 	
 	
 	
-	%\cite{armytage2020big} has recently published a book on the anthropology of wealth inequality in Pakistan and how the elite perpetuates inequality through not just business integration but political, cultural and marital ties. For instance, the bureaucratic, military, business and landed elite are interwoven through highly rigid marital ties which help extend and diversify the economic and political power of the elite. 
+	The anthropologist and political scientist has recently published a book on wealth inequality in Pakistan \cite{armytage2020big} and how the elite perpetuates inequality through not just business integration but political, cultural and marital ties. For instance, the bureaucratic, military, business and landed elite are interwoven in Pakistan through highly rigid marital ties which help extend and diversify the economic and political power of the elite. This diversification strategy adopted by Pakistan's elite through marital ties can be seen as a wall against the high levels of infighting and political conflict among various elite groups in Pakistan throughout its history.
 	
 
      \subsection{Situating Pakistan In the Global Context}
@@ -682,22 +688,62 @@ Hence, the main stylized fact is that Pakistan has high level of inequality but 
 		\section{In Defense of Inequality}
 		
 		
-		The issue of economic inequality is often seen with an apocalyptic lens by academics and politicians who view the distribution of wealth/income as central. However, the objective of this work is to inject some pragmatism and eject extreme idealism from this debate.
+		The high levels of global and national economic inequality is often seen with an apocalyptic lens by some academics and politicians who view the distribution of wealth/income as central. However, the objective of this work is to inject some pragmatism and eject extreme idealism from this debate.
 		
-		Despite creating wealth and income inequality, capitalism has generated a lot of prosperity and wealth in the first and third world regions. It is well-known that global life-expectancy, welfare, economic prosperity, women's engagement in the society and economy have increased over the last couple of centuries. Even violence has gone down and quality of life has increased for a majority of population, relative to let's say the 17th century. For detailed and substantial evidence on this, refer to the brilliant book written by Harvard-based psychologist Steven Pinker \cite{pinker2011better}. Pinker has also argued that this phenomenal progress to which the critics of inequality are blind towards is attributable to the values of enlightenment such as rationality, liberty, freedom of thought and expression (see for instance \cite{pinker2018enlightenment} and \cite{pinker2022rationality}). These values are not only consistent with capitalism but arguably created the social conditions under which capitalism could evolve to be slightly right-Hegelian. One must focus on the historical context and compare current human circumstances with those of other societies of the past rather than an artificial and romantic futuristic, post-capitalist utopia. 
+		Despite creating wealth and income inequality, capitalism has generated a lot of prosperity and wealth in the first and third world regions. It is well-known that global life-expectancy, welfare, economic prosperity, women's engagement in the society and economy have increased over the last couple of centuries. Even violence has gone down and quality of life has increased for a majority of population, relative to let's say the 17th or 18th century. For detailed and substantial evidence on this, refer to the brilliant book written by Harvard-based psychologist Steven Pinker \cite{pinker2011better}. Pinker has also argued that this phenomenal progress to which the critics of inequality are blind towards is attributable to the values of enlightenment such as rationality, liberty, freedom of thought and expression (see for instance \cite{pinker2018enlightenment} and \cite{pinker2022rationality}). These values are not only consistent with capitalism but arguably created the social conditions under which capitalism could evolve to be slightly right-Hegelian. One must focus on the historical context and compare current human circumstances with those of other societies of the past rather than an artificial and romantic futuristic, post-capitalist utopia. 
 		
-	    In the next section, I critique Piketty's work on inequality. Afterwards, I present arguments in favor of high levels of inequality in society based on incentives and freedoms. I also highlight philosophical problems with determining optimal distribution of wealth and income. I ask the question: ``why to distribute wealth if suffering and poverty can be controlled without it?''. Lastly, growth and urbanization are made possible by capital flight toward cities and other mechanisms which create inequality between urban and rural regions \textit{but} also create prosperity; in other words, there is a trade off between inequality reduction and aggregate prosperity.
-	
+	    In the next section, I critique the work of \cite{bowles2012new} and others who have argued that high inequality constraints economic growth and that some factors correlated with inequality are less morally justifiable than others.  I critique Piketty's work on inequality. Next, I discuss the highly influential work of Piketty but question some of his conclusions and assumptions. Afterwards, I present arguments in favor of high levels of inequality in society based on incentives and freedoms. I also highlight philosophical problems with determining optimal distribution of wealth and income. I ask the question: ``why to distribute wealth if suffering and poverty can be controlled without it?''. Lastly, growth and urbanization are made possible by capital flight toward cities and other process of urbanization which create inequality between urban and rural regions \textit{but} also create prosperity; in other words, there is a trade off between inequality reduction and aggregate prosperity.
+	    
+	    
+	    \subsection{Is Inequality Undesirable?}
+	    
+	    
+	    
+	    	Some economists have argued that higher inequality could act as a barrier to growth. For instance, prominent heterodox economist Samuel Bowles (see \cite{bowles2012new}) argued that wealth inequality distorts the production cycle toward sub-optimal outcomes; a case in point is over-production of cotton relative to corn in the southern US states after the civil war during 1861-1865 AD. Basically, food merchants and creditors imposed cotton production requirements on farmers under the \textit{crop-lien system}\footnote{Refer to chapter 2 of \cite{bowles2012new}.} since cotton can be more durable for storage. This is despite the fact that \textit{The Cotton South} experienced a serious labor shortage following the war, which should have led some farmers to abandon cotton in favor of corn, as the latter was much less labor-intensive. In sum, some economists have argued that high levels of inequality distorts the economy toward less-efficient outcomes and question the equity-efficiency trade-off. 
+	    
+	    My response to this argument is that any market interaction and equilibrium emerges from the preferences and incentives of \textit{all} the parties involved. Surely, in many cases the first best equilibrium from the perspective of one player cannot be achieved since it is not in the interest of the other players to collaborate accordingly. The crop-lien system led to sub-optimal outcome for the farmers but benefited the creditors for whom the cotton production was an optimal outcome. Hence, why should the optimal outcome from the perspective of farmers be treated as the ideal with which the reality has to be compared with? As we know from game theory, in some games, Pareto improvements can not be achieved if they are not consistent with incentives for deviation in a classic Nash equilibrium. Hence, why should one compare the actual growth numbers with a counterfactual which cannot be achieved given the incentives involved. Of course, one could argue that if a Pareto improvement is not achieved due to lack of law enforcement, certain legal contracts should be introduced. However, in many cases incentives of multiple parties clash with each other and the more equitable outcome is not a Pareto improvement. 
+	    
+	    
+	    Samuel Bowles and Herbert Gintis have also argued that parental inheritance operating through superior cognitive performance and educational attainments explains  at  most only  three-fifths  of  the inter-generational transmission of economic status \cite{bowles2002inheritance}. Moreover, while genetic transmission of earnings-enhancing traits appears to play a role, the genetic transmission of IQ appears to be relatively unimportant. Factors such as race, geographical location, height, beauty or other aspects of physical appearance, health status  and  personality drive significant variation in income and wealth; these ``luck'' variables have been understudied in the literature \cite{bowles2002inheritance}. 
+	    
+	    
+	    While I certainly accept the role of luck and individual traits in labor market outcomes; however the ``so what'' question still remains. Clearly, some individual traits are preferred over others in the market. However the implicit assumption in the work of \cite{bowles2002inheritance} is that one ought to view unequal outcomes emerging from height or beauty as problematic which require political and social rectification but ignore cognitive performance for instance. In many markets, such as the marriage market or the market for air hostesses, gender, height and beauty are relevant preferences valued by the agents involved. 
+	    
+	    
+	    As far as race is concerned, it has to seen in the context of underlying structural realities, owing to historical racial divisions (see \cite{darity2006economics}). The markets are reacting to not just pure biases but also the fact that race continues to be a predictor of talent and productivity in the USA for many employers due to the continuity of historical deprivation. Some economists such as William Darity have argued for affirmative action \cite{darity2005affirmative} and even rectifying historical injustice through reparations. 
+	    
+	    
+	    However, I completely disagree with this policy recommendation on philosophical and ethical grounds. There is no ethical justification for why an individual from white heritage should face differential treatment in 2023 based on presumable atrocities committed with a certain probability by his ancestors. The past and its consequences must be used as motivation to minimize current and future discrimination. However, re-creating the past and amending its consequences in the present simply adds fresh, new wounds in the social fabric and does not correct anything.
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    %Lastly, the John Rawls \cite{rawlstheory1971} versus Robert Nozik \cite{nozick1974anarchy} debate on what defines a \textit{just} society is a classic in political philosophy. Rawls posited the concept of the \textit{veil of ignorance} under which each person should have the full scheme of basic liberties, commensurate with the scheme of liberties for all; in other words, pursuit of freedom for one individual does not clash with the liberties of all. In the Rawlsian world, social and economic inequalities must satisfy two conditions: first, they must be attached to opportunities open for everyone under conditions of equal opportunity and second, they must create the greatest benefit for the least-advantaged members of society. Whereas, Nozick's \cite{nozick1974anarchy} theory of  justice  claims that  whether  a  distribution  is  \textit{just}  or  not  depends exclusively  on  \textit{how}  it came  about to be so. Nozick is primarily concerned with respecting individual rights, especially rights to property  and  self-ownership. His theory posits that there ought to be \textit{justice} in acquisition, in transfer, and  rectification  of injustice but considers the magnitude of inequality in outcomes to be irrelevant. He criticizes Rawl's ideas on the grounds that they diminish individual liberty and autonomy over the rewards of one's talents and effort.
+	    
+	    
+	   
+	    
+	   
+	    
+	    
+	    
 		
 		
 		
-		\subsection{Technical Problems with Piketty} 
+		\subsection{Piketty and Inequality} 
 		
 		
-		The work of French economist Thomas Piketty and affiliates such as Emmanuel Saez, Gabriel Zucman and others have received a lot of traction in the public discourse on inequality. Piketty and his co-authors argue that accumulation of capital, high returns on investment relative to growth i.e $r \geq g$ and inheritance of wealth inequality has perpetuated and magnified inequality over time in many advanced economies after 1970's such as in Europe and USA. Wealth inequality in 2010 was found to be less than its value around 1900 for US and Europe. On the other hand, income inequality as per top 10\%'s income share in the USA has increased after 1970 and is currently even hire than its estimated value in 1900 \cite{chancel2022world}. While this research is valuable since its documents historical trends in inequality, it imposes an assumption that high inequality is necessarily an undesirable outcome. Besides, there are other theoretical problems with this research.
+		The work of French economist Thomas Piketty \cite{piketty2017capital} and affiliates such as Emmanuel Saez, Gabriel Zucman and others have received a lot of traction in the public discourse on inequality. Piketty and his co-authors argue that accumulation of capital, high returns on investment relative to growth i.e $r \geq g$ and inheritance of wealth inequality has perpetuated and magnified inequality over time in many advanced economies after 1970's such as in Europe and USA. Wealth inequality in 2010 was found to be less than its value around 1900 for US and Europe. On the other hand, income inequality as per top 10\%'s income share in the USA has increased after 1970 and is currently even hire than its estimated value in 1900 \cite{chancel2022world}. While this research is valuable because it documents historical trends in inequality, it imposes an assumption that high inequality is necessarily an undesirable outcome which must be rectified. Besides, there are other theoretical problems with this research discussed below.
 		
 		
-		\cite{soskice2014capital} argues that the framework of \cite{piketty2017capital} in the highly popular and acclaimed work \textit{Capital in the 21st Century} is a highly stylized, neoclassical model which assumes that savings equal investment and hence, conflates the high levels of savings relative to growth after the 1970's as equivalent to a high capital to savings ratio. In reality, saving lead to investment through businesses which are vulnerable to business cycle fluctuations and \textit{creative destruction} (see \cite{schumpeter1942})\footnote{Creative destruction refers to the continuous product and process innovation mechanism by which new production units replace old ones. This restructuring defines major aspects of macroeconomic performance, not only long-run growth but also economic fluctuations. Over the long run, the process of creative destruction accounts for over 50 per cent of productivity growth in advanced economies.}. In fact, the significant rise in wealth inequality was driven by property, and largely reflects house price inflation (see \cite{bonnet2014does}) in real estate rather than high returns on overall savings.
+		\cite{soskice2014capital} argues that the framework used in \cite{piketty2017capital} i.e the highly popular and acclaimed work \textit{Capital in the 21st Century} is a highly stylized, neoclassical model which assumes that savings equal investment and hence, conflates the high levels of savings relative to growth after the 1970's as equivalent to a high capital to savings ratio. In reality, saving lead to investment through businesses which are vulnerable to business cycle fluctuations and \textit{creative destruction} (see \cite{schumpeter1942})\footnote{Creative destruction refers to the continuous product and process innovation mechanism by which new production units replace old ones. This restructuring defines major aspects of macroeconomic performance, not only long-run growth but also economic fluctuations. Over the long run, the process of creative destruction accounts for over 50 per cent of productivity growth in advanced economies.}. In fact, the significant rise in wealth inequality was driven by property, and largely reflects house price inflation (see \cite{bonnet2014does}) in real estate rather than high returns on overall savings.
 		
 		Piketty and his colleagues also do not adequately acknowledge the role of technology in driving returns on investment in recent decades and the political decisions which allowed capital mobility and financial liberalization; he seems to argue that the capture of democracy by capitalism is at the root of the growth of inequality. However, he fails to acknowledge why decisive (middle-class) voters in most well-functioning democracies have been opposed to redistribution to compensate the losers of the shift from \textit{Fordism} to knowledge economies. Thus, at worst he presents merely a reductionist, quasi-Marxist position that a high capital to output ratio gives capital political power, with the latter allowing the development of a range of other inequalities without an account of compensatory, democratic political responses.
 		
@@ -714,22 +760,24 @@ Hence, the main stylized fact is that Pakistan has high level of inequality but 
 		
 	
 		
-		\subsection{Nature, Innovation and Incentives}
+		\subsection{Nature, Incentives and Innovation}
 		
-		\paragraph{Nature:} Inequality is a natural consequence of free economic interaction in society (i.e the Smithian tendency to truck, barter and trade) which creates exceptional wins for some players, average outcomes for many others and extreme failures for a few players in the market, in line with the statistical bell curve. Uneven distribution of income and wealth is also often maintained by inheritance of social and economic capital across generations; it is indeed a privilege to inherit wealth from a wealthy land-lord or to be born in a family which has a large-scale business empire. However, this is not much different from inheriting beauty or intelligence from parents which has significant marital market and labor market returns (citations). Similarly, we know that the Darwinian process of natural selection has selected for various forms of hierarchies within groups across species. For instance, alpha males emerge in many animals in the animal kingdom including primates; such social hierarchies with dominant male leaders organize and shape the society in vital ways. These alpha males are not necessarily the most violent in the group despite occasionally using physical aggression to assert leadership; they resolve group conflicts and maintain order. This responsibility to lead the group does not come without its costs; while its common among leftist circles to denigrate the elite class for misusing its power, one must also realize that power comes with responsibility, incredible stress, vulnerability and not everyone possesses the ability to occupy these leadership positions. For instance, recent research shows that higher-ranking males experience higher testosterone and glucocorticoid (stress hormone) levels than lower-ranking males in  baboons \cite{gesquiere2011life}. Thus, many aspects of inequality emerge \textit{naturally} from the distribution of not just human abilities but  equilibrium outcomes of resolving group dynamics and conflicts for the collective good.
+		\paragraph{Nature:} Inequality is a natural consequence of free economic interaction in society (i.e the Smithian tendency to truck, barter and trade) which creates exceptional wins for some players, average outcomes for many others and extreme failures for a few players in the market, in line with the statistical bell curve. Uneven distribution of income and wealth is also often maintained by inheritance of social and economic capital across generations; it is indeed a privilege to inherit wealth from a wealthy land-lord or to be born in a family which has a large-scale business empire. However, this is not much different from inheriting beauty or intelligence from parents which has significant marital market and labor market returns (citations). Similarly, we know that the Darwinian process of natural selection has selected for various forms of hierarchies within groups across species. For instance, alpha males emerge in many animals in the animal kingdom including primates; such social hierarchies with dominant male leaders organize and shape the society in vital ways. These alpha males are not necessarily the most violent in the group despite occasionally using physical aggression to assert leadership; they resolve group conflicts and maintain order. This responsibility to lead the group does not come without its costs; while its common among leftist circles to denigrate the elite class for misusing its power, one must also realize that power comes with responsibility, incredible stress, vulnerability and not everyone possesses the ability to occupy these leadership positions. For instance, recent research shows that higher-ranking males experience higher testosterone and stress hormone levels than lower-ranking males in  baboons \cite{gesquiere2011life}. Thus, many aspects of inequality emerge \textit{naturally} from the distribution of not just human abilities but  equilibrium outcomes of resolving group dynamics and conflicts for the collective good.
 		
 		
 		
-		\paragraph{Incentives:} Inequality creates incentives and motivation for progress in the economy and society. Naturally, the \textit{creative destruction} process in markets creates winners and losers leading to inequality of \textit{outcomes}. However, this is not a static process as the winners of the Fordiian world were not the same as the winners of the knowledge economy age. Similarly, in sports such as lawn tennis, Roger Federeer was a winner in his era and Djokovic is the winner of the current era; in a free society, exceptional talent and hard work is rewarded in an exceptional manner not through coercion but through the collective will of the society, manifested through willingness to pay higher for some products relative to others. Arthur Laffer made the classical and well-known argument that taxation creates disincentives for business expansion, growth, innovation and progress \cite{laffer2004laffer} and hence there is a laffer curve which dictates the optimal level of taxation on profits and incomes which is clearly less than 100\%. \cite{trabandt2011laffer} calculated the empirical properties of laffer curve and demonstrated that the US can increase revenues by 30\% (6\%) if labor (capital) taxes are raised. For the EU, the numbers are 8\% and 1\% respectively. 
+		\paragraph{Incentives:} Inequality creates incentives and motivation for progress in the economy and society. Naturally, the \textit{creative destruction} process in markets creates winners and losers leading to inequality of \textit{outcomes}. However, this is not a static process as the winners of the Fordiian world were not the same as the winners of the knowledge economy age. Similarly, in sports such as lawn tennis, Roger Federeer was a winner in his era and Djokovic is the winner of the current era; in a free society, exceptional talent and hard work is rewarded in an exceptional manner not through coercion but through the collective will of the society, manifested through willingness to pay higher for some products relative to others. Arthur Laffer made the classical and well-known argument that taxation creates disincentives for business expansion, growth, innovation and progress \cite{laffer2004laffer} and hence there is a laffer curve which dictates the optimal level of taxation on profits and incomes which is clearly less than 100\%. \cite{trabandt2011laffer} calculated the empirical properties of laffer curve and demonstrated that the US can increase revenues by 30\% (6\%) if labor (capital) taxes are raised. For the EU, the numbers are 8\% and 1\% respectively In other words, increase in capital taxes does not lead to increase in tax-revenue after a very mild increase in taxes. This is especially true in the context of an international economy where capital-flight and increasingly labor-flight is more common to locations where incentives for business are more palatable.
 		 
 		
-		\paragraph{Innovation:} The traditional problem that critics of inequality identify is that unequal wealth accumulation and income outcomes have been historically driven by the not so free and coercive policies imposed by colonial powers such as the East India company under the British empire. For instance, barriers in trade were created for cotton trade from India to Britain and cheap raw material for cotton was extracted from colonies through violence and brutal force, which made the success of industrial cotton production possible \cite{beckert2015empire}. However, this argument fails to acknowledge that no empire in human history has a monopoly on brutality and violence; every empire in history including the Islamic empire or Roman or Western empire had blood on its hands. What really made the Western empire stand apart was its scientific and technological superiority. Thus, the invention of airplanes, cars, trains, guns, steel industry, the spinning jenny\footnote{A machine used in cotton production.} and other factories for efficient cotton production superior organization of warfare and empire, scientific and intellectual superiority of England, Europe and America (which is historically an extension of Europe after the demise of Native Americans) are factors which led to the dominance of the West over the rest.	
+		\paragraph{Political Economy and Power:} The traditional problem that critics of inequality identify is that unequal wealth accumulation and income outcomes have been historically driven by the not so free and coercive policies imposed by colonial powers such as the East India company under the British empire. For instance, barriers in trade were created for cotton trade from India to Britain and cheap raw material for cotton was extracted from colonies through violence and brutal force, which made the success of industrial cotton production possible \cite{beckert2015empire}. 
+		
+		However, this argument fails to acknowledge that no empire in human history has a monopoly on brutality and violence; every empire in history including the Islamic one or Roman or Western empire had blood on its hands. What really made the Western empire stand apart was its scientific and technological superiority. Thus, the invention of airplanes, cars, trains, guns, steel industry, the spinning jenny\footnote{A machine used in cotton production.} and other factories for efficient cotton production superior organization of warfare and empire, scientific and intellectual superiority of England, Europe and America (which is historically an extension of Europe after the demise of Native Americans) are factors which led to dominance of the West over the rest. As \cite{murray2022war} has argued, the ``West'' has been excessively accused of crimes which were not uniquely committed by this empire alone in history. While this may not be a satisfying moral justification, actions of empires and states cannot be viewed in historical vacuum and nor can they be judged from the ethical lens of an individual human being.
 			
 			
-		%	Acemoglu and Robinson's influential work reveals evidence on property rights \cite{robinson2012nations}; indicating that the incentives for wealth creation and growth were created by the nature of institutions which led to the success of the \textit{West} and failure of the \textit{rest}.
+			%Acemoglu and Robinson's influential work reveals evidence on property rights \cite{robinson2012nations}; indicating that the incentives for wealth creation and growth were created by the nature of institutions which led to the success of the \textit{West} and failure of the \textit{rest}.
 		
 	
-		\subsection{The Problems With Redistribution}
+		\subsection{Problems With Redistribution Policies}
 		
 		
 		\paragraph{Coase Theorem:} Another problem with the critique of unequal income and wealth distribution emerging from markets is that there are various political and philosophical problems with any proposal to redistribute the outcomes of market forces. For instance, Ronald Coase proved the celebrated \textit{Coase Theorem} (refer to \cite{coase1981coase}) which basically established that under certain assumptions, the initial distribution of property is irrelevant; the parties will resolve the conflict over distribution optimally assuming competitive and efficient markets along with \textit{zero transaction costs}. Of course, this theorem works when the already stated and other assumptions\footnote{Participants must only care about economic returns and have no sentimental value attached to initial property or to social equity and other non-pecuniary incentives. There must be perfect and symmetric information.} are satisfied. However, what one learns from this result is that even if reality somewhat approximates this abstract world, the initial distribution of property will have at the very least a tendency to redistribute itself toward optimal economic distribution. Hence, the implication is that distribution of wealth and property tends to converge to an equilibrium which closely approximates reality and the assumptions under which this emerge are also desirable since they preserve freedom.
@@ -759,10 +807,10 @@ Hence, the main stylized fact is that Pakistan has high level of inequality but 
 		\subsection{Successful Cities Create Inequality}
 		
 		
-		The urban economics literature demonstrates that cities tend to arise at focal points in the transportation space such as harbors, rivers, railroads and highway crossings. This is primarily driven by the lower transportation costs due to economies of scale, stemming from concentration of trade volumes (see \cite{brueckner2011lectures}). Hence, cities emerge as epicenters of trade and focal points for firms and exchange of ideas. Resembling a chain reaction in physics, workers are attracted by firms and when population increases, demand for various household items, schooling and health increases, which creates spillover effects and expands the economic scope of the city. Often certain kind of production clusters emerge in specific cities; for instance Pittsburgh in USA became a center for steel production, Chicago for meat packing, beer production in St. Louis. In Pakistan, Sialkot has a sports goods and leather production cluster, Lahore has food, garments, education and textile cluster, Gujranwala has an electronics and machinery cluster and Karachi has many clusters, the most noticeable of which is the financial sector (see \cite{azhar2019effects}).
+		The urban economics literature demonstrates that cities tend to arise at focal points in the transportation space such as harbors, rivers, railroads and highway crossings. This is primarily driven by the lower transportation costs due to economies of scale, stemming from concentration of trade volumes (see \cite{brueckner2011lectures}). Hence, cities emerge as epicenters of trade and focal points for firms and exchange of ideas. Resembling a chain reaction in physics, workers are attracted by firms and when population increases, demand for various household items, schooling and health increases, which creates spillover effects and expands the economic scope of the city. Often certain kind of production clusters emerge in specific cities; for instance Pittsburgh in USA became a center for steel production and Chicago for meat packing. In Pakistan, Sialkot has a sports goods and leather production cluster, Lahore has food, garments, education and textile cluster, Gujranwala has an electronics and machinery cluster and Karachi has many clusters, the most noticeable of which is the financial sector (see \cite{azhar2019effects}).
 		
 		
-	 Firms, jobs and capital flows toward some large and winner cities such as Mumbai, Karachi, Lahore, New York, and Tokyo. These magnificent cities which by their very existence and dynamism, are human achievements would be impossible without flight of capital toward high return investment locations. Hence, these cities owe their grandeur to capitalism. At the same time, such process of urbanization naturally creates and sustains inequality; the best minds of not just USA but the whole world are attracted toward New York for instance due to high returns on talent. Another example is Bangalore, India's fifth-largest city which is a noticeable success story. Bangalore's wealth comes not from industrial might (although it still makes plenty of textiles) but from its strength as a city of ideas \cite{glaeser2013triumph}. By concentrating so much talent in one place, Bangalore makes it easier for that talent to teach itself and for outsiders; economists call these agglomeration economies and economies of scale.
+	 Firms, jobs and capital flows toward some large and winner cities such as Mumbai, Karachi, Lahore, New York, and Tokyo. These magnificent cities which by their very existence and dynamism, are human achievements would be impossible without flight of capital toward high return investment locations. Hence, these cities owe their grandeur to capitalism. At the same time, such process of urbanization naturally creates and sustains inequality; the best minds of not just USA but the whole world are attracted toward New York for instance due to high returns on talent. Another example is Bangalore, India's fifth-largest city which is a noticeable success story. Bangalore's wealth comes not from industrial might (although it still makes plenty of textiles) but from its strength as a city where new ideas are discussed, experimented with and produced every day \cite{glaeser2013triumph}. By concentrating so much talent in one place, Bangalore makes it easier for that talent to teach itself and outsiders; economists call these agglomeration economies and economies of scale.
 		
 		
 		We know that in the United States, workers in metropolitan areas with big cities earn 30 percent more than workers who are not in metropolitan areas. The only reason why
@@ -780,6 +828,19 @@ Hence, the main stylized fact is that Pakistan has high level of inequality but 
 		\subsubsection{Cities in Pakistan}
 		
 		The ten major cities of Pakistan contribute around 95\% of the total federal tax revenue in the country: this includes the direct and indirect taxation \cite{UNHabitat2018}. In the table below, I report the federal tax revenue share for each of the top 10 cities in addition to the per capita income and poverty rate in these cities. It turns out that Karachi has the highest contribution in federal tax revenue, followed by Islamabad and Lahore. Surprisingly, the per capita income in Rawalpindi is the highest, followed by Islamabad, Peshawar, Lahore, Karachi and Faisalabad. As far as urban poverty is concerned, it is the highest in Quetta (46.3\%) and lowest in Islamabad (3.1\%), Lahore (4.3\%) and Karachi (4.5\%) \cite{UNHabitat2018}.
+		
+		
+		
+		In the figure below, I provide a visual and graphic representation of the top 10 cities in Pakistan which are represented by a dark-red color. The caption includes population ranges in millions, where Karachi has a population above 10 million and is hence represented by the largest circle. Lahore is another large city with a population of more than 6 million and Quetta is the smallest city among the top 10 with a population of close to 1 million people. Clearly, the economic activity is concentrated in these mega-cities which creates economic inequality between urban and rural areas on the whole and inequality between winner cities such as Karachi, ``runners-up'' cities such as Hyderabad, Multan and Gujranwala and ``loser'' regions such as South Punjab, Pakistan and Southern Sindh (e.g Thatta, Sujawal and Badin) in Pakistan. 
+		
+		
+		
+	%	\begin{figure}[H]
+		%	\centering
+	%		\scalebox{1}{\input{Top10CitiesofPakistan.tex}}
+	%		\hfill
+	%		\caption{}
+	%	\end{figure}
 		
 		
 		
@@ -818,12 +879,13 @@ Hence, the main stylized fact is that Pakistan has high level of inequality but 
 		\end{table}
 		
 		
-		In the figure below, I provide a visual and graphic representation of the top 10 cities in Pakistan which are represented by a dark-red color. The caption includes population ranges in millions, where Karachi has a population above 10 million and is hence represented by the largest circle. Lahore is another large city with a population of more than 6 million and Quetta is the smallest city among the top 10 with a population of close to 1 million people. Clearly, the economic activity is concentrated in these mega-cities which creates economic inequality between urban and rural areas on the whole and inequality between winner cities such as Karachi, ``runners-up'' cities such as Hyderabad, Multan and Gujranwala and ``loser'' regions such as South Punjab, Pakistan and Southern Sindh (e.g Thatta, Sujawal and Badin) in Pakistan. 
 		
 		Many people who live in Thatta which is merely two hours' drive away from Karachi must be envious of its grandeur, opportunities and quality of life. However, that is exactly why Karachi is an amazing city; it creates opportunities and value addition which inspires the most talented people across the country to be attracted toward it. If one disrupts this natural inequality by imposing artificial and oppressive barriers, then we deprive human society from achieving its potential to the fullest.
 		
+		In Figure 4, I present data on 32 administrative divisions of Pakistan, along with data on population for all and size of economy for top 10 divisions.
 		
-		While cities create inequality, they also create opportunities which have positive spill-over effects on inhabitants who live close to them or even in the same nation. For instance, the best hospitals in Karachi such as Agha Khan attract customers from all over the country and beyond. The best schools of Karachi create exceptional students for Harvard, MIT and Berkeley etc. Such positive spill-over effects are also a by-product of the tremendous wealth, opportunities and quality of products created within mega-cities.
+		
+	%	While cities create inequality, they also create opportunities which have positive spill-over effects on inhabitants who live close to them or even in the same nation. For instance, the best hospitals in Karachi such as Agha Khan attract customers from all over the country and beyond. The best schools of Karachi create exceptional students for Harvard, MIT and Berkeley etc. Such positive spill-over effects are also a by-product of the tremendous wealth, opportunities and quality of products created within mega-cities.
 		
 		 
 		
@@ -831,17 +893,34 @@ Hence, the main stylized fact is that Pakistan has high level of inequality but 
 		
 		
 		
-		\begin{figure}[H]
-			\centering
-			\scalebox{1}{\input{Top10CitiesofPakistan.tex}}
-			\hfill
-			\caption{}
-		\end{figure}
+		
+		
+		
+		
+		
+		
 		
 		
 	
 		
-		
+	\begin{figure}[H] 
+		\centering
+		\subfloat[]{%
+			\includegraphics[width=0.5\textwidth]{pakistan-divisions-population-choropleth.png}%
+			\label{fig:a}%
+		}%
+		\hfill%
+		\subfloat[]{%
+			\includegraphics[width=0.25\textwidth]{pak-top10-cities.pdf}%
+			\label{fig:b}%
+		}%
+		\hfill%
+		\subfloat[]{%
+			\includegraphics[width=0.5\textwidth]{pakistan-top10-divisions-GDP.png}%
+			\label{fig:b}%
+		}%
+		\caption{Population of Administrative Divisions (Top-Left) In Pakistan, Names/Population of Top-10 Cities (Top-Right) and GDP Contributions of Top 10 Divisions (Bottom).}
+	\end{figure}
 		
 		
 		
